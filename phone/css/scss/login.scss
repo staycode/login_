@@ -17,6 +17,11 @@
         background-color: rgba(150, 232, 251, 0.5);
         border-radius: pxToRem(30px);
         /*ÊäÈë¿ò*/
+        input {
+                border: none;
+                width: 100%;
+                /*height: pxToRem(81px);*/
+        	}
         .write {
             border: none;
             background-color: #fff;
@@ -24,11 +29,7 @@
             input {
                 outline: none;
             }
-            .input_t {
-                border: none;
-                width: 100%;
-                /*height: pxToRem(81px);*/
-            }
+            
         }
         /*É¾³ýÍ¼±êÈÝÆ÷*/
         .icon_content {
