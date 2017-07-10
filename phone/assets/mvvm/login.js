@@ -1,13 +1,13 @@
+var post_url = "http://114.215.242.163:9999/";
 var LoginService = new MVVM.Service({
     ajaxCall : function(data) {        
         //登录验证
-        var post_url = "http://114.215.242.163:9999/";
         appcan.request.ajax({
             url : post_url + "mvvm/login",
             data : data,
             type : "POST",
             success : function(data) {
-                //data格式{username: "xxx" ;password: "xxx"}               
+                //data格式{status: 0 ;msg: "xxx"}               
                 var json = JSON.parse(data);
                 if(json.status == 0){
                     alert(json.msg);
@@ -40,11 +40,10 @@ var LoginViewModel = new(MVVM.ViewModel.extend({
     el : "#main_box",
     events : {
         //登录按钮
-        "tap #btn" : function(ev, param) {
+        "tap #login_btn" : function(ev, param) {
             var self = this;
             var username = self.model.get('username');
             var password = self.model.get('password');
-            // alert(username);
             if(username == ""|| password == ""){
                 alert("请输入用户名密码");
                 return false;
