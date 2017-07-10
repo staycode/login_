@@ -1,0 +1,90 @@
+@charset "UTF-8";
+.debug_show {
+  display: block;
+  z-index: 9999;
+  background: red;
+  width: 100%;
+  padding: 5px; }
+
+#page_0 {
+  /*页面背景*/
+  background-image: url(../../css/images/round2.png); }
+
+#index_content {
+  /*登录logo*/
+  /*form表单*/
+  /*尾部版权信息*/ }
+  #index_content .logo_img {
+    margin: 3.5rem 5.65625rem 2.46875rem 5.65625rem;
+    height: 14rem;
+    background-image: url(../../css/images/logo.png); }
+  #index_content .main_box {
+    margin: 0 2.34375rem;
+    background-color: rgba(150, 232, 251, 0.5);
+    border-radius: 0.9375rem;
+    /*输入框*/
+    /*删除图标容器*/
+    /*用戶*/
+    /*密码*/
+    /*登录按钮*/ }
+    #index_content .main_box .write {
+      border: none;
+      background-color: #fff;
+      padding-left: 0.9375rem; }
+      #index_content .main_box .write input {
+        outline: none; }
+      #index_content .main_box .write .input_t {
+        border: none;
+        width: 100%;
+        /*height: pxToRem(81px);*/ }
+    #index_content .main_box .icon_content {
+      background-color: #fff;
+      width: 1.46875rem;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+      padding-right: 0.3125rem;
+      /*删除图标*/ }
+      #index_content .main_box .icon_content .error_png {
+        width: 0.84375rem;
+        height: 0.84375rem;
+        margin: 0.84375rem 0.3125rem;
+        background-image: url(../../css/images/cancle.png); }
+    #index_content .main_box .input_box_user {
+      height: 2.53125rem;
+      margin: 1.875rem 2.375rem 0 2.375rem;
+      /*用戶图标容器*/ }
+      #index_content .main_box .input_box_user .img_content {
+        background-color: #47e1fa;
+        /*用户图标*/ }
+        #index_content .main_box .input_box_user .img_content .img_1 {
+          width: 1.375rem;
+          height: 1.375rem;
+          margin: 0.59375rem 0.5625rem;
+          background-image: url(../../css/images/user.png); }
+    #index_content .main_box .input_box_password {
+      height: 2.53125rem;
+      margin: 1.125rem 2.375rem 0 2.375rem;
+      /*密码图标容器*/ }
+      #index_content .main_box .input_box_password .img_content_psd {
+        background-color: #47aff9;
+        /*密码图标*/ }
+        #index_content .main_box .input_box_password .img_content_psd .img_2 {
+          width: 1.375rem;
+          height: 1.375rem;
+          margin: 0.59375rem 0.5625rem;
+          background-image: url(../../css/images/lock.png); }
+    #index_content .main_box .login_btn {
+      margin: 2.5rem 2.375rem 2.0625rem 2.375rem;
+      height: 2.5625rem;
+      background-color: #31b2ff;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      font-weight: bold; }
+  #index_content .foot {
+    margin-top: 3.875rem;
+    margin-bottom: 1.125rem;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    color: #fff; }
+
+/*# sourceMappingURL=login.css.map */

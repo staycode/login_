@@ -1,0 +1,98 @@
+@import "../main";
+#page_0 {
+    /*页面背景*/
+    background-image: url(../../css/images/round2.png);
+}
+
+#index_content {
+    /*登录logo*/
+    .logo_img {
+        margin: pxToRem(112px) pxToRem(181px) pxToRem(79px) pxToRem(181px);
+        height: pxToRem(448px);
+        background-image: url(../../css/images/logo.png);
+    }
+    /*form表单*/
+    .main_box {
+        margin: 0 pxToRem(75px);
+        background-color: rgba(150, 232, 251, 0.5);
+        border-radius: pxToRem(30px);
+        /*输入框*/
+        .write {
+            border: none;
+            background-color: #fff;
+            padding-left: pxToRem(30px);
+            input {
+                outline: none;
+            }
+            .input_t {
+                border: none;
+                width: 100%;
+                /*height: pxToRem(81px);*/
+            }
+        }
+        /*删除图标容器*/
+        .icon_content {
+            background-color: #fff;
+            width: pxToRem(47px);
+            border-top-right-radius: pxToRem(8px);
+            border-bottom-right-radius: pxToRem(8px);
+            padding-right: pxToRem(10px);
+            /*删除图标*/
+            .error_png {
+                width: pxToRem(27px);
+                height: pxToRem(27px);
+                margin: pxToRem(27px) pxToRem(10px);
+                background-image: url(../../css/images/cancle.png);
+            }
+        }
+        /*用戶*/
+        .input_box_user {
+            height: pxToRem(81px);
+            margin: pxToRem(60px) pxToRem(76px) 0 pxToRem(76px);
+            /*用戶图标容器*/
+            .img_content {
+                background-color: #47e1fa;
+                /*用户图标*/
+                .img_1 {
+                    width: pxToRem(44px);
+                    height: pxToRem(44px);
+                    margin: pxToRem(19px) pxToRem(18px);
+                    background-image: url(../../css/images/user.png);
+                }
+            }
+        }
+        /*密码*/
+        .input_box_password {
+            height: pxToRem(81px);
+            margin: pxToRem(36px) pxToRem(76px) 0 pxToRem(76px);
+            /*密码图标容器*/
+            .img_content_psd {
+                background-color: #47aff9;
+                /*密码图标*/
+                .img_2 {
+                    width: pxToRem(44px);
+                    height: pxToRem(44px);
+                    margin: pxToRem(19px) pxToRem(18px);
+                    background-image: url(../../css/images/lock.png);
+                }
+            }
+        }
+        /*登录按钮*/
+        .login_btn {
+            margin: pxToRem(80px) pxToRem(76px) pxToRem(66px) pxToRem(76px);
+            height: pxToRem(82px);
+            background-color: #31b2ff;
+            border-radius: pxToRem(8px);
+            font-size: pxToRem(32px);
+            font-weight: bold;
+        }
+    }
+    /*尾部版权信息*/
+    .foot {
+        margin-top: pxToRem(124px);
+        margin-bottom: pxToRem(36px);
+        font-size: pxToRem(22px);
+        font-weight: bold;
+        color: #fff;
+    }
+}

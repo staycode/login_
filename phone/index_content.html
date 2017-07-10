@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="css/scss/login.css">
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div class="ub ub-ver" id="index_content">
+            <div class="ub-img logo_img">
+
+            </div>
+            <div class="ub ub-f1 ub-ver main_box" id="main_box">
+                <div class="ub ub-f1 input_box_user ">
+                    <div class="img_content">
+                        <div class="user_png ub-img img_1">
+                            <!-- <img class="img_1" src="css/images/user.png" /> -->
+                        </div>
+                    </div>
+                    <div class="ub-f1 write">
+                        <input type="text" class="input_t" data-bind="value:username"/>
+                    </div>
+                    <div class="icon_content">
+                        <div class="ub-img error_png">
+                            <!-- <img class="error_png" src="css/images/cancle.png" /> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="ub ub-f1 input_box_password ">
+                    <div class="img_content_psd">
+                        <div class="ub-img img_2">
+
+                        </div>
+                    </div>
+                    <div class="ub-f1 write">
+                        <input type="password" class="input_t" data-bind="value:password"/>
+                    </div>
+                    <div class="icon_content">
+                        <div class="ub-img error_png">
+                            <!-- <img class="error_png" src="css/images/cancle.png" /> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="btn ub ub-ac bc-text-head ub-pc bc-btn login_btn"  id="btn">
+                    登录
+                </div>
+
+            </div>
+            <div class="ub ub-pc ub-ac foot">
+                Powered by Casco
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="assets/mvvm/login.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+        })
+        
+
+    </script>
+</html>

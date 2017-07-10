@@ -1,0 +1,148 @@
+//默认字体
+$baseFontSize: 32px !default;
+//是否调试模式
+$if_debug: true;
+//是否是ie
+$if_ie: true;
+//边框粗细
+$border_px: 1px;
+$btn_background_color:#ffac40;
+
+$page_distance:25px;
+$form_ul_distance:20px;
+$li_height:90px;
+$label_color:#949494;
+
+//边框颜色（充满整个页面的边框）
+$border_color:#E2E1E6;
+//边框颜色（与左边有距离的边框）
+$border_left_color:#D9D9D9;
+// pixels to rem
+@function pxToRem($px) {
+   $temp: $px / $baseFontSize ;
+   @if $temp==0{
+       //如果是0的话还是0
+       $temp:0;
+   }@else if $temp<-0.001 {
+       //如果是负数，就不变
+       
+   } @else if $temp<0.062 {
+       //解决底分辨率手机看不到边框问题
+       $temp:0.0618760;
+   } 
+  @return $temp* 1rem;
+}
+
+// pixels to em 
+@function pxToEm($px) {
+   $temp: $px / $baseFontSize ;
+   @if $temp==0{
+       //如果是0的话还是0
+       $temp:0;
+   }@else if $temp<0.062 {
+       //解决底分辨率手机看不到边框问题
+       $temp:0.0618760;
+   } 
+  @return $temp* 1em;
+}
+
+//透明度
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//居中
+@mixin center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//底部边框
+@mixin border-bottom($size: 1px,$style:solid,$color:black) {
+    @if $size==1px{
+        //针对1px不同分辨率上面展示2px的解决方法
+         border-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+         border-width: 0px 0px pxToRem($size);
+    }@else{
+        border-bottom:pxToRem($size) $style $color;
+    }
+}
+
+//如果是debug,状态就是可见的
+.debug_show{
+    @if $if_debug {
+        display: block;
+        z-index: 9999;
+        background: red;
+        width:100%;
+        padding: 5px;
+    }@else {
+         display: none;
+    }
+}
+
+//头部左边样式为<的按钮
+@mixin arr-left {
+	background-image: url('../images/oa_left.png');
+	width: pxToRem(22px);
+	background-size:  pxToRem(25px);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    margin-right: pxToRem(19px);
+    min-width:2em;
+}
+
+@mixin public_header{
+    //公共头部的设置
+    #nav-left{
+        //头部左边部分的设置：宽度、与页面左边距离
+        width: pxToRem(125px);
+        margin-left:pxToRem($page_distance);
+        .to_left_img{
+            background-image: url("../../images/to_left_img.png");
+            width: pxToRem(21px);
+            height: pxToRem(41px);
+        }
+    }
+    #nav-right{
+        //头部右边部分的设置：宽度、与页面右边距离
+        width: pxToRem(125px);
+        margin-right:pxToRem($page_distance);
+    }
+}
+
+@mixin form_style{
+    //表单的样式设置
+    ul{
+        //表单ul的上下边框的设置、与顶部的距离
+        background-color:#ffffff;
+        margin-top: pxToRem($form_ul_distance);
+        border-top: pxToRem($border_px) solid $border_color;
+        border-bottom: pxToRem($border_px) solid $border_color;
+        label{
+            color: $label_color;
+        }
+        li{
+            //表单li的高度
+            height: pxToRem($li_height);
+            margin-left: pxToRem($page_distance);
+            border-bottom: pxToRem($border_px) solid $border_color;
+            input{
+                outline:none;
+                padding-left:pxToRem(25px);
+            }
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+//没有数据时的样式设置（中远集运图标与文字说明）
+@mixin no_data{
+    background-image:url("../../images/no_data.png");
+    width: pxToRem(287px);
+    height: pxToRem(95px);
+    margin: pxToRem(150px) auto pxToRem(25px) auto;
+}
