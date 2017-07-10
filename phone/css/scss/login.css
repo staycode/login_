@@ -27,16 +27,15 @@
     /*用戶*/
     /*密码*/
     /*登录按钮*/ }
+    #index_content .main_box input {
+      border: none;
+      width: 100%;
+      outline: none;
+      /*height: pxToRem(81px);*/ }
     #index_content .main_box .write {
       border: none;
       background-color: #fff;
       padding-left: 0.9375rem; }
-      #index_content .main_box .write input {
-        outline: none; }
-      #index_content .main_box .write .input_t {
-        border: none;
-        width: 100%;
-        /*height: pxToRem(81px);*/ }
     #index_content .main_box .icon_content {
       background-color: #fff;
       width: 1.46875rem;

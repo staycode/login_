@@ -20,16 +20,13 @@
         input {
                 border: none;
                 width: 100%;
+                outline: none;
                 /*height: pxToRem(81px);*/
         	}
         .write {
             border: none;
             background-color: #fff;
-            padding-left: pxToRem(30px);
-            input {
-                outline: none;
-            }
-            
+            padding-left: pxToRem(30px);           
         }
         /*É¾³ýÍ¼±êÈÝÆ÷*/
         .icon_content {

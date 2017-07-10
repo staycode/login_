@@ -1,10 +1,5 @@
 var LoginService = new MVVM.Service({
-    // validate : function(data) {
-        // return data.status;
-        // console.log(data.status)
-    // },
-    ajaxCall : function(data) {
-        
+    ajaxCall : function(data) {        
         //登录验证
         var post_url = "http://114.215.242.163:9999/";
         appcan.request.ajax({
@@ -42,11 +37,9 @@ var LoginModel = new(MVVM.Model.extend({
 }));
 
 var LoginViewModel = new(MVVM.ViewModel.extend({
-    // initialize : function() {
-        // this.model.view = this;
-    // },
     el : "#main_box",
     events : {
+        //登录按钮
         "tap #btn" : function(ev, param) {
             var self = this;
             var username = self.model.get('username');
@@ -57,7 +50,6 @@ var LoginViewModel = new(MVVM.ViewModel.extend({
                 return false;
             }
             var data = {"username":username,"password":password};
-            //console.log(data)
             LoginService.ajaxCall(data)
 
         }
