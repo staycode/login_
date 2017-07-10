@@ -47,6 +47,14 @@ var LoginViewModel = new(MVVM.ViewModel.extend({
             if(username == ""|| password == ""){
                 alert("请输入用户名密码");
                 return false;
+            }else if(password.length < 5){
+                alert("密码长度不能少于5");
+                return false;
+            }
+            var reg = /^[a-z | A-Z]\w{5,15}/;
+            if(!reg.test(password)){
+                 alert("密码只能由数字和字母组成");
+                 return false;
             }
             var data = {"username":username,"password":password};
             LoginService.ajaxCall(data)
