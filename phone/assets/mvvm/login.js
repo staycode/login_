@@ -1,30 +1,30 @@
-var post_url = "http://114.215.242.163:9999/";
+//登录提交地址
+var Post_url = "http://114.215.242.163:9999/";
 var LoginService = new MVVM.Service({
-    ajaxCall: function(data) {
+    ajaxCall: function(data,options) {
         //登录验证
+        debugger;
         appcan.request.ajax({
-            url: post_url + "mvvm/login",
+            url: Post_url + "mvvm/login",
             data: data,
             type: "POST",
             success: function(data) {
-                //data格式{status: 0 ;msg: "xxx"}               
-                var json = JSON.parse(data);
-                if(json.status == 0) {
-                    alert(json.msg);
-                } else if(json.status == 1) {
-                    alert(json.msg);
-                } else {
-                    alert("登录失败")
-                }
+                 debugger;
+                //data格式{status: 0 ;msg: "xxx"}
+                if(typeof(data) == "string") {
+                    var data = JSON.parse(data);
+                    options.success(data);
+                } 
             },
             error: function(err) {
-                alert("登录失败！");
-
+                 debugger;
+                 options.error(err);
             }
         });
     }
 });
 
+//登录模型
 var LoginModel = new(MVVM.Model.extend({
     defaults: {
         "username": "admin",
@@ -33,6 +33,7 @@ var LoginModel = new(MVVM.Model.extend({
     initialize: function() {
         return;
     },
+    //前端登录认证
     validate: function(attrs) {
         var username = attrs.username;
         var password = attrs.password;
@@ -41,16 +42,23 @@ var LoginModel = new(MVVM.Model.extend({
         } else if(password.length < 5) {
             return "密码长度不能少于5";
         }
-        // var reg = /^[a-z | A-Z]\w{5,15}/;
-        // if(!reg.test(password)) {
-            // return "密码只能由数字和字母组成";
-        // }
+
+    },
+    sync:function(method,model,options){
+        switch (method){
+            case "create":
+                debugger;
+               // options.success({status: 0 ;msg: "xxx"});
+               LoginService.request(model.attributes,options);
+            
+        }
+        
     }
 }));
 
-LoginModel.bind("invalid", function(model, error) {
-    alert(error);
-});
+// LoginModel.bind("invalid", function(model, error) {
+    // alert(error);
+// });
 
 var LoginViewModel = new(MVVM.ViewModel.extend({
     el: "#main_box",
@@ -58,12 +66,24 @@ var LoginViewModel = new(MVVM.ViewModel.extend({
         //登录按钮
         "tap #login_btn": function(ev, param) {
             var self = this;
-            var username = self.model.get("username");    
-            var password = self.model.get("password");
-            var data = {"username":username,"password":password};
-            console.log(data);
-            LoginService.ajaxCall(data);
-            LoginModel.save();
+            if(!LoginModel.isValid()) {
+                alert(LoginModel.validationError);               
+            }else{
+                LoginModel.save({},{
+                    "success":function(model,data,options){
+                        debugger;
+                        console.log(data);
+                        if(data.status==0){
+                            
+                        }
+                        alert(data.msg)
+                    },
+                    "error":function(a,b,c,d){
+                        debugger;
+                        console.log(a+"  "+b+"  "+c+"  "+d)
+                    }
+                });
+            }
         }
     },
     model: LoginModel,
